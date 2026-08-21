@@ -324,22 +324,69 @@
     </div>
   </div>
 
-  <!-- Special Offer -->
-  <div class="grain" style="background: color-mix(in oklab, #0d6b5a 90%, black); position: relative; overflow: hidden;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; position: relative;">
-      <div class="offer-grid" style="display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;">
-        <div style="max-width: 620px;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(251,249,244,0.12); border: 1px solid rgba(251,249,244,0.28); padding: 5px 12px; border-radius: 20px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #E8C77C; margin-bottom: 14px;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
-            Special offer &middot; Limited time
-          </div>
-          <h2 class="display" style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 10px; color: #FBF9F4; line-height: 1.2;">Combine two services, save 10%</h2>
-          <p style="font-size: 15.5px; color: rgba(251,249,244,0.78); line-height: 1.6; margin: 0;">Book your mattress together with a sofa, carpet or any other service and get 10% off the combined price. Just mention it when you message us.</p>
+  <!-- Special Offers -->
+  <div class="grain" id="offers" style="background: color-mix(in oklab, #0d6b5a 90%, black); position: relative; overflow: hidden;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 80px 24px; position: relative;">
+
+      <div style="max-width: 620px; margin: 0 auto 40px; text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(251,249,244,0.12); border: 1px solid rgba(251,249,244,0.28); padding: 5px 12px; border-radius: 20px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #E8C77C; margin-bottom: 14px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8C77C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          Special offers
         </div>
-        <a href="https://wa.me/353899629764?text=Hi%21%20I%27d%20like%20to%20combine%20two%20services%20and%20get%20the%2010%25%20discount." target="_blank" rel="noopener" class="wa-btn" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #0B3B22; padding: 15px 26px; border-radius: 6px; font-size: 15.5px; font-weight: 700; white-space: nowrap; flex-shrink: 0;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B3B22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Claim 10% Off
-        </a>
+        <h2 class="display" style="font-size: 30px; font-weight: 700; letter-spacing: -0.01em; margin: 0; color: #FBF9F4; line-height: 1.2;">Save on your clean</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+
+        <!-- Offer 1: Launch discount -->
+        <div style="background: rgba(251,249,244,0.06); border: 1px solid rgba(251,249,244,0.18); border-radius: 14px; padding: 30px 28px;">
+          <div style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #E8C77C; margin-bottom: 10px;">Limited time &middot; Launch offer</div>
+          <h3 class="display" style="font-size: 21px; font-weight: 700; margin: 0 0 12px; color: #FBF9F4; line-height: 1.3;">15% off &mdash; or &euro;10 off, whichever is bigger</h3>
+          <p style="font-size: 15px; color: rgba(251,249,244,0.78); line-height: 1.6; margin: 0 0 14px;">
+            You always get the bigger discount: 15% of your bill or a flat &euro;10, whichever comes out higher.
+          </p>
+          <ul style="list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 8px; font-size: 14px; color: rgba(251,249,244,0.85);">
+            <li style="display: flex; gap: 8px;"><span style="color: #E8C77C; flex-shrink: 0;">&bull;</span>On a &euro;40 job, 15% is only &euro;6, so you get the &euro;10 minimum instead.</li>
+            <li style="display: flex; gap: 8px;"><span style="color: #E8C77C; flex-shrink: 0;">&bull;</span>On a &euro;100 job, 15% (&euro;15) beats the &euro;10 minimum.</li>
+          </ul>
+          <p style="font-size: 13.5px; color: rgba(251,249,244,0.65); line-height: 1.55; margin: 0 0 20px; padding: 12px 14px; background: rgba(0,0,0,0.15); border-radius: 8px;">
+            <strong style="color: rgba(251,249,244,0.85);">Condition:</strong> this discount applies only if you&rsquo;re happy for us to share a before/after photo of your item on our Instagram and Facebook. If you&rsquo;d rather not, no problem &mdash; the job just goes ahead at full price.
+          </p>
+          <a href="https://wa.me/353899629764?text=Hi%21%20I%27d%20like%20to%20ask%20about%20the%20launch%20offer%20%2815%25%20or%20%E2%82%AC10%20off%29." target="_blank" rel="noopener" class="wa-btn" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #0B3B22; padding: 13px 22px; border-radius: 6px; font-size: 14.5px; font-weight: 700; white-space: nowrap;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0B3B22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Ask about the launch offer
+          </a>
+        </div>
+
+        <!-- Offer 2: Combo pricing -->
+        <div style="background: rgba(251,249,244,0.06); border: 1px solid rgba(251,249,244,0.18); border-radius: 14px; padding: 30px 28px;">
+          <div style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #E8C77C; margin-bottom: 10px;">Combo pricing</div>
+          <h3 class="display" style="font-size: 21px; font-weight: 700; margin: 0 0 12px; color: #FBF9F4; line-height: 1.3;">Sofa + mattress combos</h3>
+          <div style="display: grid; gap: 10px; margin-bottom: 14px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: rgba(0,0,0,0.15); border-radius: 8px; padding: 12px 14px;">
+              <div style="font-size: 14px; color: rgba(251,249,244,0.85);">3-seater sofa + double mattress</div>
+              <div style="text-align: right; flex-shrink: 0;">
+                <div class="display tabular" style="font-size: 17px; font-weight: 700; color: #FBF9F4;">&euro;125</div>
+                <div style="font-size: 11.5px; color: rgba(251,249,244,0.55); text-decoration: line-through;">&euro;140</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: rgba(0,0,0,0.15); border-radius: 8px; padding: 12px 14px;">
+              <div style="font-size: 14px; color: rgba(251,249,244,0.85);">2-seater sofa + single mattress</div>
+              <div style="text-align: right; flex-shrink: 0;">
+                <div class="display tabular" style="font-size: 17px; font-weight: 700; color: #FBF9F4;">&euro;95</div>
+                <div style="font-size: 11.5px; color: rgba(251,249,244,0.55); text-decoration: line-through;">&euro;105</div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size: 14px; color: rgba(251,249,244,0.78); line-height: 1.6; margin: 0 0 20px;">
+            Any other sofa + mattress combination gets <strong style="color: #FBF9F4;">10% off</strong> the combined price. Example: 1-seat armchair (&euro;45) + king mattress (&euro;65) = &euro;110, minus 10% (&euro;11) = <strong style="color: #FBF9F4;">&euro;99</strong>.
+          </p>
+          <a href="https://wa.me/353899629764?text=Hi%21%20I%27d%20like%20to%20book%20a%20sofa%20%2B%20mattress%20combo." target="_blank" rel="noopener" class="wa-btn" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #0B3B22; padding: 13px 22px; border-radius: 6px; font-size: 14.5px; font-weight: 700; white-space: nowrap;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0B3B22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Book a combo
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -350,7 +397,7 @@
       <div style="text-align: center; margin-bottom: 48px;">
         <div class="kicker" style="font-size: 19px; color: #9C7A3C; margin-bottom: 6px;">Pricing</div>
         <h2 class="display" style="font-size: 33px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 12px;">Sofa &amp; mattress pricing</h2>
-        <p style="font-size: 16px; color: #4A534E; line-height: 1.6; margin: 0 auto 22px; max-width: 560px;">Fixed price by size, so you know the cost before we arrive. Carpets, rugs, car interiors and commercial jobs get a free custom quote on WhatsApp &mdash; and combining two services saves you 10%.</p>
+        <p style="font-size: 16px; color: #4A534E; line-height: 1.6; margin: 0 auto 22px; max-width: 560px;">Fixed price by size, so you know the cost before we arrive. Carpets, rugs, car interiors and commercial jobs get a free custom quote on WhatsApp &mdash; and booking a sofa with a mattress gets you combo pricing.</p>
         <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 22px; font-size: 13.5px; font-weight: 600; color: #1C2321;">
           <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0d6b5a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Deep cleaning</span>
           <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0d6b5a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Stain removal</span>
