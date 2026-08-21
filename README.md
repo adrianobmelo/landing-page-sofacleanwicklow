@@ -1,25 +1,26 @@
 # Sofa Clean Wicklow — Landing Page
 
-Single-file landing page for Sofa Clean Wicklow (upholstery, carpet, car and
-commercial cleaning in Wicklow, Ireland). All CSS and images are inlined into
-`index.html`, so the whole site is one file with no build step and no
-external dependencies (besides Google Fonts).
+Landing page for Sofa Clean Wicklow (upholstery, carpet, car and commercial
+cleaning in Wicklow, Ireland). Plain HTML/CSS, no build step, no framework.
 
-## Deploy
+## Structure
 
-Any static host works. A few options:
+```
+index.html      the whole page
+assets/         photos and logo (referenced by index.html)
+```
 
-**GitHub Pages**
-1. Push this repo to GitHub.
-2. In the repo settings, enable Pages and point it at the `main` branch, root folder.
-3. The site publishes at `https://<username>.github.io/<repo>/`.
+## Deploy on GitHub Pages
 
-**Netlify / Vercel**
-Drag the folder into the dashboard, or connect the repo — no build command needed,
-publish directory is `/`.
+1. Upload both `index.html` and the `assets/` folder to your repo — use
+   **Add file → Upload files** and drag the folder in, so binary images
+   transfer intact (pasting HTML into the browser's text editor can cut off
+   very long files).
+2. In repo Settings → Pages, set source to the `main` branch, root folder.
+3. Site publishes at `https://<username>.github.io/<repo>/`.
 
 ## Editing
 
-Everything (styles, copy, prices, links) lives inline in `index.html`. The
-WhatsApp number and prefilled messages are set as `wa.me` links throughout the
-file — search for `wa.me/353899629764` to find every CTA.
+Everything is in `index.html` (inline styles, no CSS files). The WhatsApp
+number and prefilled messages are `wa.me` links — search for
+`wa.me/353899629764` to find every CTA.
