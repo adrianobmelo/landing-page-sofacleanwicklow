@@ -899,10 +899,9 @@ height="0" width="0" title="Google Tag Manager" style="display:none;visibility:h
           <div style="margin-top: 18px; font-size: 14px; color: rgba(251,249,244,0.5);"><a href="tel:+353870047288" data-source="final_cta" data-agent="human" style="color: inherit;">087 004 7288</a> &middot; Wicklow, Ireland</div>
         </div>
         <div class="photo-frame final-cta-photo" style="border-radius: 12px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.3);">
-          <picture>
-            <source srcset="assets/family.webp" type="image/webp">
-            <img src="assets/family.jpg" alt="Family relaxing on a clean sofa at home" loading="lazy" style="width: 100%; display: block; aspect-ratio: 4/5; object-fit: cover;">
-          </picture>
+          <video id="family-video" autoplay muted loop playsinline preload="metadata" poster="assets/family-animated-poster.jpg" aria-label="Family relaxing on a clean sofa at home" style="width: 100%; display: block; aspect-ratio: 4/5; object-fit: cover;">
+            <source src="assets/family-animated.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -1071,6 +1070,14 @@ height="0" width="0" title="Google Tag Manager" style="display:none;visibility:h
       document.getElementById(btn.getAttribute('aria-controls')).hidden = expanded;
     });
   });
+</script>
+
+<script>
+  // Respect reduced-motion preference: pause the looping family video
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var familyVideo = document.getElementById('family-video');
+    if (familyVideo) familyVideo.pause();
+  }
 </script>
 
 <script>
