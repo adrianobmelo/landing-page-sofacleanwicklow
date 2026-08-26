@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adrianobmelo.github.io/landing-page-sofacleanwicklow/sitemap.xml
+Sitemap: https://sofacleanwicklow.ie/sitemap.xml
