@@ -72,6 +72,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "ratingValue": "5.0",
     "reviewCount": "2"
   },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Thainara Cunha" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Excellent service! I had my upholstery cleaned and I'm really happy with the result. The service was professional, punctual and careful — my furniture came out visibly cleaner, refreshed and looking great.",
+      "publisher": { "@type": "Organization", "name": "Google" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "A BM" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Very good service, my carpet looks brand new.",
+      "publisher": { "@type": "Organization", "name": "Google" }
+    }
+  ],
   "founder": {
     "@type": "Person",
     "name": "Adriano Melo"
@@ -82,25 +98,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "itemListElement": [
       {
         "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Sofa & Upholstery Cleaning" },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sofa & Upholstery Cleaning",
+          "description": "Deep extraction, sanitisation and deodorising for sofas and upholstered furniture, with stain removal and fabric protection included.",
+          "areaServed": "Co. Wicklow, Ireland",
+          "provider": { "@id": "https://sofacleanwicklow.ie/#business" }
+        },
         "priceCurrency": "EUR",
         "price": "45"
       },
       {
         "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Carpet & Rug Cleaning" }
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Carpet & Rug Cleaning",
+          "description": "Deep extraction and stain removal for carpets, rugs and staircases.",
+          "areaServed": "Co. Wicklow, Ireland",
+          "provider": { "@id": "https://sofacleanwicklow.ie/#business" }
+        }
       },
       {
         "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Car Interior Cleaning" }
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Car Interior Cleaning",
+          "description": "Deep extraction cleaning for car seats and interior upholstery.",
+          "areaServed": "Co. Wicklow, Ireland",
+          "provider": { "@id": "https://sofacleanwicklow.ie/#business" }
+        }
       },
       {
         "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Commercial & Office Upholstery Cleaning" }
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial & Office Upholstery Cleaning",
+          "description": "Upholstery and carpet cleaning for offices and commercial spaces in Wicklow.",
+          "areaServed": "Co. Wicklow, Ireland",
+          "provider": { "@id": "https://sofacleanwicklow.ie/#business" }
+        }
       },
       {
         "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Mattress Cleaning" },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mattress Cleaning",
+          "description": "Deep extraction, sanitisation and deodorising for mattresses.",
+          "areaServed": "Co. Wicklow, Ireland",
+          "provider": { "@id": "https://sofacleanwicklow.ie/#business" }
+        },
         "priceCurrency": "EUR",
         "price": "35"
       }
