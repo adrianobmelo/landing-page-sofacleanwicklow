@@ -49,9 +49,11 @@ do negócio. Atualizado conforme mudanças são feitas.
 
 - `robots.txt` e `sitemap.xml` publicados na raiz
 - Schema.org (JSON-LD) no `<head>`:
-  - `LocalBusiness` com endereço, área de atendimento, `aggregateRating`, `founder`, `makesOffer` (catálogo de serviços com `Service` detalhado por item)
+  - `LocalBusiness` com endereço, `geo` (`GeoCoordinates`, 52.9808/-6.0446), área de atendimento, `aggregateRating`, `founder`, `makesOffer` (catálogo de serviços com `Service` detalhado por item)
+  - `areaServed`: Wicklow Town, Ashford, Rathnew, Greystones, Newtownmountkennedy
   - `Review` estruturado dos 2 reviews reais do Google (Thainara Cunha, A BM)
   - `FAQPage` com as perguntas frequentes do site
+- Meta tags de geolocalização no `<head>`: `geo.region` (`IE-WW`), `geo.placename`, `geo.position` e `ICBM`, todas apontando para Wicklow Town (52.9808, -6.0446)
 - Open Graph / Twitter Card configurados, imagem `og-image.jpg` (1200×630)
 - Imagens em WebP com fallback JPG (`<picture>`), `loading="lazy"` exceto hero (`fetchpriority="high"` + preload)
 - Todas as tags `<img>` com `width`/`height` (ou `aspect-ratio` + `height: auto`) para CLS = 0
