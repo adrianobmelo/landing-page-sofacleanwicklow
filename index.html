@@ -285,9 +285,32 @@ src="https://www.facebook.com/tr?id=1039487698849495&ev=PageView&noscript=1"
 
     .mobile-cta { display: none; }
 
+    .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: #1C2321; }
+    .hero-bg picture, .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-bg img { opacity: 0; transform: scale(1); animation: heroKenBurns 21s ease-in-out infinite; }
+    .hero-bg picture:nth-child(1) img { animation-delay: 0s; }
+    .hero-bg picture:nth-child(2) img { animation-delay: 7s; }
+    .hero-bg picture:nth-child(3) img { animation-delay: 14s; }
+    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(100deg, rgba(10,14,12,0.86) 0%, rgba(10,14,12,0.66) 45%, rgba(10,14,12,0.4) 100%); }
+
+    @keyframes heroKenBurns {
+      0% { opacity: 0; transform: scale(1); }
+      9% { opacity: 1; transform: scale(1.02); }
+      38% { opacity: 1; transform: scale(1.08); }
+      47% { opacity: 0; transform: scale(1.1); }
+      100% { opacity: 0; transform: scale(1.1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg img { animation: none !important; opacity: 0; transform: scale(1) !important; }
+      .hero-bg picture:first-child img { opacity: 1 !important; }
+    }
+
     @media (max-width: 860px) {
-      .hero-grid { grid-template-columns: 1fr !important; }
-      .hero-copy { padding-right: 0 !important; }
+      .hero { min-height: 560px !important; }
+    }
+
+    @media (max-width: 860px) {
       .services-grid { grid-template-columns: 1fr 1fr !important; }
       .price-grid { grid-template-columns: 1fr 1fr !important; }
       .steps-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
@@ -301,7 +324,6 @@ src="https://www.facebook.com/tr?id=1039487698849495&ev=PageView&noscript=1"
       .offer-grid { justify-content: center !important; text-align: center; }
       .h1 { font-size: 38px !important; line-height: 1.14 !important; }
       .nav-links { display: none !important; }
-      .hero-photo-a, .hero-photo-b { transform: none !important; margin-top: 0 !important; }
       .mobile-cta { display: flex !important; }
       body { padding-bottom: 76px; }
     }
@@ -309,10 +331,6 @@ src="https://www.facebook.com/tr?id=1039487698849495&ev=PageView&noscript=1"
       .services-grid { grid-template-columns: 1fr !important; }
       .price-grid { grid-template-columns: 1fr !important; }
       .footer-grid { grid-template-columns: 1fr !important; }
-    }
-    @media (min-width: 861px) {
-      .hero-photo-a { transform: rotate(-1.6deg); }
-      .hero-photo-b { transform: rotate(1.4deg); margin-top: 28px; }
     }
 
     /* FAQ accordion */
@@ -364,26 +382,41 @@ height="0" width="0" title="Google Tag Manager" style="display:none;visibility:h
   </div>
 
   <!-- Hero -->
-  <div class="grain" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 100px; overflow: hidden;">
-    <div class="hero-grid" style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center;">
+  <div class="hero grain" style="position: relative; overflow: hidden; min-height: 640px; display: flex; align-items: center;">
+    <div class="hero-bg" aria-hidden="true">
+      <picture>
+        <source srcset="assets/before.webp" type="image/webp">
+        <img src="assets/before.jpg" alt="" fetchpriority="high" loading="eager">
+      </picture>
+      <picture>
+        <source srcset="assets/after.webp" type="image/webp">
+        <img src="assets/after.jpg" alt="" loading="eager">
+      </picture>
+      <picture>
+        <source srcset="assets/action.webp" type="image/webp">
+        <img src="assets/action.jpg" alt="" loading="eager">
+      </picture>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
-      <div class="hero-copy" style="padding-right: 12px;">
-        <div class="reveal reveal-1" style="display: inline-flex; align-items: center; gap: 8px; background: #EFE9DA; border: 1px solid #E0D8C4; padding: 6px 12px; border-radius: 20px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: #4A534E; margin-bottom: 26px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4A534E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.33-7-11a7 7 0 0 1 14 0c0 5.67-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 88px 24px 100px; width: 100%;">
+      <div class="hero-copy" style="max-width: 620px;">
+        <div class="reveal reveal-1" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(251,249,244,0.12); border: 1px solid rgba(251,249,244,0.3); padding: 6px 12px; border-radius: 20px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: #FBF9F4; margin-bottom: 26px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FBF9F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.33-7-11a7 7 0 0 1 14 0c0 5.67-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
           Wicklow Town &middot; Ashford &middot; Rathnew &amp; nearby
         </div>
 
-        <h1 class="display h1 reveal reveal-2" style="font-size: 54px; line-height: 1.06; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 22px;">
+        <h1 class="display h1 reveal reveal-2" style="font-size: 54px; line-height: 1.06; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 22px; color: #FBF9F4;">
           Deep-cleaned sofas and carpets, right in your Wicklow home.
         </h1>
 
-        <p class="reveal reveal-3" style="font-size: 17.5px; line-height: 1.6; color: #4A534E; max-width: 480px; margin: 0 0 22px;">
+        <p class="reveal reveal-3" style="font-size: 17.5px; line-height: 1.6; color: rgba(251,249,244,0.85); max-width: 480px; margin: 0 0 22px;">
           Sofa Clean Wicklow handles upholstery, carpets, rugs, car interiors and commercial spaces. Send a photo on WhatsApp and get a free quote back from Adriano &mdash; no call centre, no waiting around.
         </p>
 
-        <div class="reveal reveal-3" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-size: 12.5px; font-weight: 700; color: #4A534E; margin-bottom: 26px;">
-          <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d6b5a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Satisfaction guarantee</span>
-          <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d6b5a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Trusted across Wicklow</span>
+        <div class="reveal reveal-3" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-size: 12.5px; font-weight: 700; color: #FBF9F4; margin-bottom: 26px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6FE3B4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Satisfaction guarantee</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6FE3B4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Trusted across Wicklow</span>
         </div>
 
         <div class="reveal reveal-4" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
@@ -391,49 +424,26 @@ height="0" width="0" title="Google Tag Manager" style="display:none;visibility:h
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B3B22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             Get a Free Quote on WhatsApp
           </a>
-          <a href="tel:+353870047288" data-source="hero" data-agent="human" aria-label="Call Adriano directly at 087 004 7288" style="display: inline-flex; align-items: center; gap: 8px; color: #1C2321; font-weight: 700; font-size: 15px; padding: 16px 12px; min-height: 48px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C2321" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+353870047288" data-source="hero" data-agent="human" aria-label="Call Adriano directly at 087 004 7288" style="display: inline-flex; align-items: center; gap: 8px; color: #FBF9F4; font-weight: 700; font-size: 15px; padding: 16px 12px; min-height: 48px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBF9F4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call Adriano: 087 004 7288
           </a>
         </div>
 
-        <p class="reveal reveal-4" style="font-size: 13px; color: rgba(28,35,33,0.6); max-width: 480px; margin: 10px 0 0; line-height: 1.5;">
+        <p class="reveal reveal-4" style="font-size: 13px; color: rgba(251,249,244,0.62); max-width: 480px; margin: 10px 0 0; line-height: 1.5;">
           Instant reply on WhatsApp &mdash; Adriano takes over within minutes (business hours).<br>
           For urgent jobs, call direct: <strong>087 004 7288</strong>.
         </p>
 
-        <a href="#pricing" class="nav-link link-arrow reveal reveal-4" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 13.5px; font-weight: 700; color: #4A534E;">
+        <a href="#pricing" class="link-arrow reveal reveal-4" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 13.5px; font-weight: 700; color: #FBF9F4;">
           Sofa cleaning from &euro;45
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-      </div>
 
-      <div class="reveal reveal-3" style="position: relative; padding: 8px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-          <div class="hero-photo-a photo-frame" style="border: 1px solid #E7E1D3; background: #ffffff; border-radius: 10px; box-shadow: 0 28px 56px rgba(28,35,33,0.14); position: relative; overflow: hidden;">
-            <div style="position: relative; aspect-ratio: 3/4;">
-              <picture>
-                <source srcset="assets/before.webp" type="image/webp">
-                <img src="assets/before.jpg" alt="Stair carpet before cleaning" width="1000" height="545" fetchpriority="high" loading="eager" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-              </picture>
-              <div style="position: absolute; top: 10px; left: 10px; background: rgba(28,35,33,0.85); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 5px 10px; border-radius: 20px;">Before</div>
-            </div>
-          </div>
-          <div class="hero-photo-b photo-frame" style="border: 1px solid #E7E1D3; background: #ffffff; border-radius: 10px; box-shadow: 0 28px 56px rgba(28,35,33,0.14); position: relative; overflow: hidden;">
-            <div style="position: relative; aspect-ratio: 3/4;">
-              <picture>
-                <source srcset="assets/after.webp" type="image/webp">
-                <img src="assets/after.jpg" alt="Stair carpet after cleaning" width="1000" height="549" fetchpriority="high" loading="eager" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-              </picture>
-              <div style="position: absolute; top: 10px; left: 10px; background: #0d6b5a; color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 5px 10px; border-radius: 20px;">After</div>
-            </div>
-          </div>
-        </div>
-        <div style="text-align: center; padding: 18px 4px 0; font-size: 13px; color: #4A534E;">
-          Real job, no filters &mdash; a staircase carpet clean in Wicklow.
+        <div class="reveal reveal-4" style="margin-top: 22px; font-size: 12.5px; color: rgba(251,249,244,0.55);">
+          Real jobs, no filters &mdash; Wicklow, Ashford &amp; Rathnew.
         </div>
       </div>
-
     </div>
   </div>
 
